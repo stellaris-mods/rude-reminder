@@ -1,0 +1,447 @@
+namespace = folkrude
+
+country_event = {
+	id = folkrude.900
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		every_country = {
+			limit = { is_country_type = "enclave" }
+			establish_communications_no_message = root
+			add_trust = {
+				who = root
+				amount = 51
+			}
+			every_owned_fleet = {
+				solar_system = {
+					every_system_planet = {
+						surveyed = {
+							set_surveyed = yes
+							surveyor = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = folkrude.1
+	hide_window = yes
+
+	mean_time_to_happen = {
+		days = 14
+	}
+
+	trigger = {
+		is_country_type = "default"
+		is_ai = no
+		NOT = { has_country_flag = "folkrude_open" }
+	}
+
+	immediate = {
+		rude_setup = yes
+
+		country_event = { id = folkrude.100 }
+		if = { limit = { NOT = { has_country_flag = "folkrude_open" } } country_event = { id = folkrude.200 } }
+		if = { limit = { NOT = { has_country_flag = "folkrude_open" } } country_event = { id = folkrude.300 } }
+		if = { limit = { NOT = { has_country_flag = "folkrude_open" } } country_event = { id = folkrude.400 } }
+	}
+}
+
+# Xuracorp
+
+country_event = {
+	id = folkrude.100
+	title = "folkrude.title"
+	desc = "folkrude.desc"
+	location = event_target:trader_location
+	is_triggered_only = yes
+	picture = "GFX_event_folkrude_xuracorp"
+
+	trigger = {
+		NOT = { has_country_flag = "folkrude_open" }
+		NOT = { has_country_flag = "folkrude_xuracorp_ignore" }
+		NOT = { has_country_flag = "folkrude_xuracorp_30days" }
+
+		NOT = { has_global_flag = "xuracorp_destroyed" }
+		NOT = { has_country_flag = "trader_enclave_diplomacy_engaged" }
+		NOT = { has_country_flag = "attacked_xuracorp" }
+		NOT = { has_modifier = "enclave_traders_sr2" }
+
+		any_country = {
+			is_country_type = "enclave"
+			has_country_flag = "trader_enclave_country_1"
+			has_established_contact = root
+			trust = {
+				who = root
+				value > 49
+			}
+		}
+		energy > 1000
+	}
+	after = { remove_country_flag = "folkrude_open" }
+
+	immediate = {
+		set_country_flag = "folkrude_open"
+		rude_kill_all_leaders = yes
+		rude_draw_insult_from_hat = yes
+		set_timed_country_flag = {
+			flag = "folkrude_xuracorp_30days"
+			days = 30
+		}
+		random_country = {
+			limit = {
+				is_country_type = "enclave"
+				has_country_flag = "trader_enclave_country_1"
+				has_established_contact = root
+				trust = {
+					who = root
+					value > 49
+				}
+			}
+
+			random_owned_ship = {
+				limit = {
+					is_ship_size = enclave_station
+				}
+				save_event_target_as = RudeTargetScope
+				solar_system = {
+					save_event_target_as = trader_location
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "folkrude.button"
+		custom_tooltip = "folkrude.button.tooltip"
+	}
+	option = {
+		name = "folkrude.year"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_xuracorp_ignore"
+				days = 360
+			}
+		}
+	}
+	option = {
+		name = "folkrude.five"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_xuracorp_ignore"
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = "folkrude.disable"
+		custom_tooltip = "folkrude.disable.tooltip"
+		hidden_effect = {
+			set_country_flag = "folkrude_xuracorp_ignore"
+		}
+	}
+}
+
+# Riggans
+
+country_event = {
+	id = folkrude.200
+	title = "folkrude.title"
+	desc = "folkrude.desc"
+	location = event_target:trader_location
+	is_triggered_only = yes
+	picture = "GFX_event_folkrude_riggans"
+
+	trigger = {
+		NOT = { has_country_flag = "folkrude_open" }
+		NOT = { has_country_flag = "folkrude_riggans_ignore" }
+		NOT = { has_country_flag = "folkrude_riggans_30days" }
+
+		NOT = { has_global_flag = "riggans_destroyed" }
+		NOT = { has_country_flag = "trader_enclave_diplomacy_engaged" }
+		NOT = { has_country_flag = "attacked_riggans" }
+		NOT = { has_modifier = "enclave_traders_sr1" }
+
+		any_country = {
+			is_country_type = "enclave"
+			has_country_flag = "trader_enclave_country_2"
+			has_established_contact = root
+			trust = {
+				who = root
+				value > 49
+			}
+		}
+		energy > 1000
+	}
+	after = { remove_country_flag = "folkrude_open" }
+
+	immediate = {
+		set_country_flag = "folkrude_open"
+		rude_kill_all_leaders = yes
+		rude_draw_insult_from_hat = yes
+		set_timed_country_flag = {
+			flag = "folkrude_riggans_30days"
+			days = 30
+		}
+		random_country = {
+			limit = {
+				is_country_type = "enclave"
+				has_country_flag = "trader_enclave_country_2"
+				has_established_contact = root
+				trust = {
+					who = root
+					value > 49
+				}
+			}
+
+			random_owned_ship = {
+				limit = {
+					is_ship_size = enclave_station
+				}
+				save_event_target_as = RudeTargetScope
+				solar_system = {
+					save_event_target_as = trader_location
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "folkrude.button"
+		custom_tooltip = "folkrude.button.tooltip"
+	}
+	option = {
+		name = "folkrude.year"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_riggans_ignore"
+				days = 360
+			}
+		}
+	}
+	option = {
+		name = "folkrude.five"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_riggans_ignore"
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = "folkrude.disable"
+		custom_tooltip = "folkrude.disable.tooltip"
+		hidden_effect = {
+			set_country_flag = "folkrude_riggans_ignore"
+		}
+	}
+}
+
+# Muutagans
+
+country_event = {
+	id = folkrude.300
+	title = "folkrude.title"
+	desc = "folkrude.desc"
+	location = event_target:trader_location
+	is_triggered_only = yes
+	picture = "GFX_event_folkrude_muutagans"
+
+	trigger = {
+		NOT = { has_country_flag = "folkrude_open" }
+		NOT = { has_country_flag = "folkrude_muutagans_ignore" }
+		NOT = { has_country_flag = "folkrude_muutagans_30days" }
+
+		NOT = { has_global_flag = "muutagans_destroyed" }
+		NOT = { has_country_flag = "trader_enclave_diplomacy_engaged" }
+		NOT = { has_country_flag = "attacked_muutagans" }
+		NOT = { has_modifier = "enclave_traders_sr3" }
+
+		any_country = {
+			is_country_type = "enclave"
+			has_country_flag = "trader_enclave_country_3"
+			has_established_contact = root
+			trust = {
+				who = root
+				value > 49
+			}
+		}
+		energy > 1000
+	}
+	after = { remove_country_flag = "folkrude_open" }
+
+	immediate = {
+		set_country_flag = "folkrude_open"
+		rude_kill_all_leaders = yes
+		rude_draw_insult_from_hat = yes
+		set_timed_country_flag = {
+			flag = "folkrude_muutagans_30days"
+			days = 30
+		}
+		random_country = {
+			limit = {
+				is_country_type = "enclave"
+				has_country_flag = "trader_enclave_country_3"
+				has_established_contact = root
+				trust = {
+					who = root
+					value > 49
+				}
+			}
+
+			random_owned_ship = {
+				limit = {
+					is_ship_size = enclave_station
+				}
+				save_event_target_as = RudeTargetScope
+				solar_system = {
+					save_event_target_as = trader_location
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "folkrude.button"
+		custom_tooltip = "folkrude.button.tooltip"
+	}
+	option = {
+		name = "folkrude.year"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_muutagans_ignore"
+				days = 360
+			}
+		}
+	}
+	option = {
+		name = "folkrude.five"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_muutagans_ignore"
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = "folkrude.disable"
+		custom_tooltip = "folkrude.disable.tooltip"
+		hidden_effect = {
+			set_country_flag = "folkrude_muutagans_ignore"
+		}
+	}
+}
+
+# Artist Festival
+
+country_event = {
+	id = folkrude.400
+	title = "folkrude.title"
+	desc = "folkrude.desc"
+	location = event_target:artist_location
+	is_triggered_only = yes
+	picture = "GFX_event_folkrude_artists"
+
+	trigger = {
+		NOT = { has_country_flag = "folkrude_open" }
+		NOT = { has_country_flag = "folkrude_artists_ignore" }
+		NOT = { has_country_flag = "folkrude_artists_30days" }
+
+		#has_country_flag = "enclave_artist_encountered"
+		NOT = { has_country_flag = "artist_festival_purchased" }
+		NOT = { has_country_flag = "artist_enclave_diplomacy_continued" }
+		# XXX Can't use this flag because the vanilla code fucks it up
+		#NOT = { has_country_flag = "artist_enclave_diplomacy_engaged" }
+		NOT = { has_country_flag = "enclave_artist_ignores" }
+		NOT = { has_modifier = "enclave_artist_festival" }
+
+		any_country = {
+			is_country_type = "enclave"
+			has_country_flag = "artist_enclave_country"
+			has_established_contact = root
+			trust = {
+				who = root
+				value > 49
+			}
+		}
+		energy > 500
+		# It doesn't actually cost more than 500, but the button requires 749
+		minerals > 750
+		influence > 100
+	}
+	after = { remove_country_flag = "folkrude_open" }
+
+	immediate = {
+		remove_country_flag = "artist_enclave_diplomacy_engaged"
+		set_country_flag = "folkrude_open"
+		rude_kill_all_leaders = yes
+		rude_draw_insult_from_hat = yes
+		set_timed_country_flag = {
+			flag = "folkrude_artists_30days"
+			days = 30
+		}
+		random_country = {
+			limit = {
+				is_country_type = "enclave"
+				has_country_flag = "artist_enclave_country"
+				has_established_contact = root
+				trust = {
+					who = root
+					value > 49
+				}
+			}
+			# XXX fix
+			random_owned_fleet = {
+				limit = {
+					is_ship_size = enclave_station
+				}
+				save_event_target_as = RudeTargetScope
+				solar_system = {
+					save_event_target_as = artist_location
+				}
+			}
+		}
+	}
+
+	option = {
+		name = "folkrude.button"
+		custom_tooltip = "folkrude.button.tooltip"
+	}
+	option = {
+		name = "folkrude.year"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_artists_ignore"
+				days = 360
+			}
+		}
+	}
+	option = {
+		name = "folkrude.five"
+		custom_tooltip = "folkrude.tooltip"
+		hidden_effect = {
+			set_timed_country_flag = {
+				flag = "folkrude_artists_ignore"
+				days = 1800
+			}
+		}
+	}
+	option = {
+		name = "folkrude.disable"
+		custom_tooltip = "folkrude.disable.tooltip"
+		hidden_effect = {
+			set_country_flag = "folkrude_artists_ignore"
+		}
+	}
+}

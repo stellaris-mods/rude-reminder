@@ -1,0 +1,23 @@
+﻿#l_english:
+l_spanish:
+#l_french:
+#l_german:
+#l_braz_por:
+#l_polish:
+#l_russian:
+
+name_list_RudeInsultList: "Rude Insults"
+name_list_RudeInsultList_desc: "This list of names should not be pickable."
+
+folkrude.title: "[RudeTargetScope.Owner.GetName]"
+folkrude.desc: "We are being hailed by our rude diplomatic relations officer: §H\"[RudeNameLeader.GetName] But I am compelled by my employment contract to inform you that §!§Y[RudeTargetScope.Owner.GetName]§!§H might have a deal available that would benefit our empire.\"§!\n\nHe will not remind us again about this specific deal for a month or three.\n\n§MUse the location button in the top right to go to the [RudeTargetScope.GetFleetName] system.§!"
+
+folkrude.button: "Thank you"
+folkrude.button.tooltip: "This button does nothing. Use the location button in the top right to move to the relevant location.\n\nIf you don't renew the subscription, you will be reminded again in 30-90 days."
+
+folkrude.year: "§PDon't remind me for one year§!"
+folkrude.five: "§PDon't remind me for five years§!"
+folkrude.tooltip: "Only affects this trader or artist enclave. You will get popups for all others."
+
+folkrude.disable: "§RNever remind me again§!"
+folkrude.disable.tooltip: "Turns the addon off completely for this game - for this specific trader or artist only - even across savegames.\n\nOnly affects this specific resource."

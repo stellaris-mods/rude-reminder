@@ -1,0 +1,67 @@
+﻿
+RudeInsultList = {
+	selectable = { always = no }
+	randomized = no
+
+	character_names = {
+		default = {
+			full_names = {
+"You forgot again, didn't you? You disgust me."
+"Your scent is utterly revolting."
+"I swear that every time I endeavor to have a meal with you, you get in heated arguments with imaginary friends and I have to apologize to people for your behavior."
+"We're having an excessively hard time picturing a more wicked hell than watching you jump rope in the nude."
+"You have a dreadful existence, horrible ambitions, and you're an idiot."
+"Bathe in a river of vomit, you pathetic creature."
+"I fervently hope you and your whole wretched race goes extinct."
+"I can definitely see you sucking off a sex offender in a vacant bus stop for spare change."
+"I just queefed a lump of kielbasa out of my humongous hog funnel and it looked a lot like you."
+"I find you so repulsive that I'm never having children specifically so they will never have to meet you."
+"I hope you die a beggar, you reeking pile of garbage."
+"What the f- did you just f-ing say about me, you little bitch? I’ll have you know I graduated top of my class, and I’ve been involved in numerous secret trades on enclaves, and they might have a deal available that would benefit our empire."
+			}
+		}
+	}
+
+	ship_names = {
+		generic = { Test }
+	}
+
+	fleet_names = {
+		random_names = {}
+		sequential_name = "%O% Task Force"
+	}
+
+	army_names = {
+		defense_army = {
+			sequential_name = "%O% Defensive Regulars"
+		}
+		assault_army = {
+			sequential_name = "%O% Attack Dragoons"
+		}
+		slave_army = {
+			sequential_name = "%O% Battle Thralls"
+		}
+		clone_army = {
+			sequential_name = "%O% Warrior Clones"
+		}
+		robotic_army = {
+			sequential_name = "%O% Battle Droid Legion"
+		}
+		android_army = {
+			sequential_name = "%O% Silver Legionnaires"
+		}
+		psionic_army = {
+			sequential_name = "%O% Psionic Cadre"
+		}
+		xenomorph_army = {
+			sequential_name = "%O% Destroyer Brood"
+		}
+		gene_warrior_army = {
+			sequential_name = "%O% Augmented Vanguard"
+		}
+	}
+
+	planet_names = {
+		generic = { names = { Test } }
+	}
+}

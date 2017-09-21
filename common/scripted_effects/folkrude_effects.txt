@@ -1,0 +1,38 @@
+rude_setup = {
+	if = {
+		limit = { NOT = { has_global_flag = "folkrude_setup" } }
+		set_global_flag = "folkrude_setup"
+		create_country = {
+			name = " "
+			type = ambient
+			species = random
+			name_list = "RudeInsultList"
+			ignore_initial_colony_error = yes
+			auto_delete = no
+		}
+		last_created_country = { save_global_event_target_as = folkrude_country }
+	}
+}
+
+rude_draw_insult_from_hat = {
+	event_target:folkrude_country = {
+		create_leader = {
+			type = random
+			species = random
+			name = random
+			skill = 0
+		}
+	}
+	last_created_leader = { save_event_target_as = RudeNameLeader }
+}
+
+rude_kill_all_leaders = {
+	event_target:folkrude_country = {
+		every_owned_leader = {
+			kill_leader = {
+				show_notification = no
+			}
+		}
+	}
+}
+

@@ -1,0 +1,22 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_event_folkrude_artists"
+		texturefile = "gfx/folkrude_artists.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+	spriteType = {
+		name = "GFX_event_folkrude_muutagans"
+		texturefile = "gfx/folkrude_muutagans.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+	spriteType = {
+		name = "GFX_event_folkrude_riggans"
+		texturefile = "gfx/folkrude_riggans.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+	spriteType = {
+		name = "GFX_event_folkrude_xuracorp"
+		texturefile = "gfx/folkrude_xuracorp.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+	}
+}
