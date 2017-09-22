@@ -77,7 +77,7 @@ country_event = {
 			has_established_contact = root
 			trust = {
 				who = root
-				value > 49
+				value > 50
 			}
 		}
 		energy > 1000
@@ -99,7 +99,7 @@ country_event = {
 				has_established_contact = root
 				trust = {
 					who = root
-					value > 49
+					value > 50
 				}
 			}
 
@@ -174,7 +174,7 @@ country_event = {
 			has_established_contact = root
 			trust = {
 				who = root
-				value > 49
+				value > 50
 			}
 		}
 		energy > 1000
@@ -196,7 +196,7 @@ country_event = {
 				has_established_contact = root
 				trust = {
 					who = root
-					value > 49
+					value > 50
 				}
 			}
 
@@ -271,7 +271,7 @@ country_event = {
 			has_established_contact = root
 			trust = {
 				who = root
-				value > 49
+				value > 50
 			}
 		}
 		energy > 1000
@@ -293,7 +293,7 @@ country_event = {
 				has_established_contact = root
 				trust = {
 					who = root
-					value > 49
+					value > 50
 				}
 			}
 
@@ -371,7 +371,7 @@ country_event = {
 			has_established_contact = root
 			trust = {
 				who = root
-				value > 49
+				value > 50
 			}
 		}
 		energy > 500
@@ -397,7 +397,7 @@ country_event = {
 				has_established_contact = root
 				trust = {
 					who = root
-					value > 49
+					value > 50
 				}
 			}
 			# XXX fix
