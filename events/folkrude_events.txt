@@ -8,9 +8,9 @@ country_event = {
 	immediate = {
 		every_country = {
 			limit = { is_country_type = "enclave" }
-			establish_communications_no_message = root
+			establish_communications_no_message = ROOT
 			add_trust = {
-				who = root
+				who = ROOT
 				amount = 51
 			}
 			every_owned_fleet = {
@@ -74,9 +74,9 @@ country_event = {
 		any_country = {
 			is_country_type = "enclave"
 			has_country_flag = "trader_enclave_country_1"
-			has_established_contact = root
+			has_established_contact = ROOT
 			trust = {
-				who = root
+				who = ROOT
 				value > 50
 			}
 		}
@@ -96,9 +96,9 @@ country_event = {
 			limit = {
 				is_country_type = "enclave"
 				has_country_flag = "trader_enclave_country_1"
-				has_established_contact = root
+				has_established_contact = ROOT
 				trust = {
-					who = root
+					who = ROOT
 					value > 50
 				}
 			}
@@ -171,9 +171,9 @@ country_event = {
 		any_country = {
 			is_country_type = "enclave"
 			has_country_flag = "trader_enclave_country_2"
-			has_established_contact = root
+			has_established_contact = ROOT
 			trust = {
-				who = root
+				who = ROOT
 				value > 50
 			}
 		}
@@ -193,9 +193,9 @@ country_event = {
 			limit = {
 				is_country_type = "enclave"
 				has_country_flag = "trader_enclave_country_2"
-				has_established_contact = root
+				has_established_contact = ROOT
 				trust = {
-					who = root
+					who = ROOT
 					value > 50
 				}
 			}
@@ -268,9 +268,9 @@ country_event = {
 		any_country = {
 			is_country_type = "enclave"
 			has_country_flag = "trader_enclave_country_3"
-			has_established_contact = root
+			has_established_contact = ROOT
 			trust = {
-				who = root
+				who = ROOT
 				value > 50
 			}
 		}
@@ -290,9 +290,9 @@ country_event = {
 			limit = {
 				is_country_type = "enclave"
 				has_country_flag = "trader_enclave_country_3"
-				has_established_contact = root
+				has_established_contact = ROOT
 				trust = {
-					who = root
+					who = ROOT
 					value > 50
 				}
 			}
@@ -357,20 +357,17 @@ country_event = {
 		NOT = { has_country_flag = "folkrude_artists_ignore" }
 		NOT = { has_country_flag = "folkrude_artists_30days" }
 
-		#has_country_flag = "enclave_artist_encountered"
 		NOT = { has_country_flag = "artist_festival_purchased" }
 		NOT = { has_country_flag = "artist_enclave_diplomacy_continued" }
-		# XXX Can't use this flag because the vanilla code fucks it up
-		#NOT = { has_country_flag = "artist_enclave_diplomacy_engaged" }
 		NOT = { has_country_flag = "enclave_artist_ignores" }
 		NOT = { has_modifier = "enclave_artist_festival" }
 
 		any_country = {
 			is_country_type = "enclave"
 			has_country_flag = "artist_enclave_country"
-			has_established_contact = root
+			has_established_contact = ROOT
 			trust = {
-				who = root
+				who = ROOT
 				value > 50
 			}
 		}
@@ -394,21 +391,16 @@ country_event = {
 			limit = {
 				is_country_type = "enclave"
 				has_country_flag = "artist_enclave_country"
-				has_established_contact = root
+				has_established_contact = ROOT
 				trust = {
-					who = root
+					who = ROOT
 					value > 50
 				}
 			}
-			# XXX fix
 			random_owned_fleet = {
-				limit = {
-					is_ship_size = enclave_station
-				}
+				limit = { is_ship_size = enclave_station }
 				save_event_target_as = RudeTargetScope
-				solar_system = {
-					save_event_target_as = artist_location
-				}
+				solar_system = { save_event_target_as = artist_location }
 			}
 		}
 	}
